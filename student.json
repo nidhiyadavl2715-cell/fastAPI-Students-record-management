@@ -1,0 +1,36 @@
+{"s001":
+     {
+      "name": "John Doe",
+      "age": 20,
+      "course": "Computer Science",
+      "id":126
+      },
+ "s002":
+      {
+       "name": "Jane Smith",
+       "age": 22,
+       "course": "Mathematics",
+       "id":125
+      },
+ "s003":
+      {
+       "name": "Emily Johnson",
+       "age": 19,
+       "course": "Physics",
+       "id":124
+     },
+  "s004":
+      {
+       "name": "Michael Brown",
+       "age": 21,
+       "course": "Chemistry",
+       "id":123
+     },
+  "s005":
+     {
+           
+     "name": "Sarah Davis", 
+     "age": 23,
+     "course": "Biology",
+     "id":122}
+     }
