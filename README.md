@@ -145,3 +145,9 @@ Aspiring AI Engineer | Python Developer
 ---
 
 ⭐ If you find this project useful, feel free to explore the repository!
+
+
+## 📸 Project Screenshots
+
+### Student Dashboard
+![Dashboard](screenshots/dashboard.png)
