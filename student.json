@@ -1,36 +1,46 @@
-{"s001":
-     {
-      "name": "John Doe",
-      "age": 20,
-      "course": "Computer Science",
-      "id":126
-      },
- "s002":
-      {
-       "name": "Jane Smith",
-       "age": 22,
-       "course": "Mathematics",
-       "id":125
-      },
- "s003":
-      {
-       "name": "Emily Johnson",
-       "age": 19,
-       "course": "Physics",
-       "id":124
-     },
-  "s004":
-      {
-       "name": "Michael Brown",
-       "age": 21,
-       "course": "Chemistry",
-       "id":123
-     },
-  "s005":
-     {
-           
-     "name": "Sarah Davis", 
-     "age": 23,
-     "course": "Biology",
-     "id":122}
-     }
+{
+    "s001": {
+        "name": "John Doe",
+        "age": 20,
+        "course": "Computer Science",
+        "marks": 85.5
+    },
+    "s002": {
+        "name": "Jane Smith",
+        "age": 22,
+        "course": "Mathematics",
+        "marks": 90.0
+    },
+    "s003": {
+        "name": "Emily Johnson",
+        "age": 19,
+        "course": "Physics",
+        "marks": 92.5
+    },
+    "s004": {
+        "name": "Michael Brown",
+        "age": 21,
+        "course": "Chemistry",
+        "marks": 88.0
+    },
+    "s005": {
+        "name": "Sarah Davis",
+        "age": 23,
+        "course": "Biology",
+        "marks": 91.0
+    },
+    "s006": {
+        "name": "Lisa Doe",
+        "age": 20,
+        "course": "Physics",
+        "marks": 85.5,
+        "email": "Lisa@example.com"
+    },
+    "s007": {
+        "name": "Nidhi Yadav",
+        "age": 21,
+        "course": "Python",
+        "marks": 99.9,
+        "email": "Nidhiyadav@example.com"
+    }
+}

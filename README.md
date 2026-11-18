@@ -1,120 +1,41 @@
-# 🎓 FastAPI Student Records Management
 
-A beginner-friendly REST API project built using **Python and FastAPI** to manage student records stored in a JSON file.
+# Student Registry (FastAPI + Streamlit + HTML)
 
-## 🚀 Features
+A FastAPI backend, a `student.json` database, and two UIs: Streamlit and plain HTML/CSS/JS.
 
-- Get a welcome message
-- Retrieve all student records
-- Search students by Student ID
-- Filter students by course
-- Sort students by marks, age, or name
-- Paginate student records
-- Handle errors using HTTPException
-- Validate URL parameters using Path and Query
+## Files
+| File | Purpose |
+|------|---------|
+| `main.py` | FastAPI backend (routes, validation, JSON read/write) |
+| `app.py` | Streamlit UI |
+| `student.json` | Database (JSON file) |
+| `web/index.html`, `web/style.css`, `web/app.js` | HTML UI |
+| `.gitignore` | Files Git should not track |
 
-## 🛠️ Technologies Used
-
-- Python
-- FastAPI
-- JSON
-- Uvicorn
-- VS Code
-- Git & GitHub
-
-## 📁 Project Structure
-
-```text
-FastApi/
-│
-├── main.py
-├── student.json
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
-## ⚙️ Installation & Setup
-
-### 1. Clone the repository
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-### 2. Open the project folder
-
-```bash
-cd fastAPI-Students-record-management
-```
-
-### 3. Create a virtual environment
-
+## Setup
 ```bash
 python -m venv venv
+venv\Scripts\activate             # Mac/Linux: source venv/bin/activate
+pip install fastapi uvicorn "pydantic[email]" streamlit requests
 ```
 
-### 4. Activate the virtual environment
-
-Windows:
-
+## Run (from the project folder, in 2 separate terminals)
 ```bash
-venv\Scripts\activate
+python -m uvicorn main:app --reload   # Terminal 1 -> API docs: http://127.0.0.1:8000/docs
+python -m streamlit run app.py        # Terminal 2 -> Streamlit UI: http://localhost:8501
 ```
+The HTML UI is served by FastAPI itself: http://127.0.0.1:8000/web/
 
-### 5. Install dependencies
+Both UIs only work while the FastAPI server (Terminal 1) is running.
 
-```bash
-pip install -r requirements.txt
-```
-
-### 6. Run the application
-
-```bash
-uvicorn main:app --reload
-```
-
-## 📌 API Endpoints
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/` | Welcome message |
-| GET | `/hello` | Hello page |
-| GET | `/students` | Get all students |
-| GET | `/students/{student_id}` | Get student by ID |
-| GET | `/filter?course=Physics` | Filter students |
-| GET | `/sort?field=marks&order=asc` | Sort students |
-| GET | `/paginate?page=1&limit=5` | Paginate students |
-
-## 📖 API Documentation
-
-After starting the server, open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-Explore and test all API endpoints using Swagger UI.
-
-## 🎯 Learning Objectives
-
-This project helped me understand:
-
-- REST API development
-- FastAPI fundamentals
-- Path and Query parameters
-- JSON data handling
-- Filtering, sorting and pagination
-- HTTP error handling
-
-## 👩‍💻 Author
-
-**Nidhi Yadav**
-
-BSc Computer Science Student | Aspiring AI Engineer
-
-GitHub: https://github.com/nidhiyadavl2715-cell
-
----
-
-⭐ If you find this project useful, feel free to explore it!
+## API endpoints
+| Method | Path | Purpose |
+|--------|------|---------|
+| GET | `/students` | All students |
+| GET | `/students/{id}` | One student |
+| GET | `/filter?course=Physics` | Filter by course |
+| GET | `/sort?field=marks&order=dec` | Sort (order: asc or dec) |
+| GET | `/paginate?page=1&limit=5` | Pagination |
+| POST | `/create` | Create a student |
+| PUT | `/update/{id}` | Update a student |
+| DELETE | `/delete/{id}` | Delete a student |
